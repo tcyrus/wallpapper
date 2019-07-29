@@ -31,6 +31,6 @@ class PictureInfo: Decodable {
         self.isForDark = isForDark
         self.altitude = altitude
         self.azimuth = azimuth
-        self.time = time 
+        self.time = time
     }
 }
