@@ -10,7 +10,7 @@ This is simple console application for macOS to create dynamic wallpapers introd
 
 ## Build and install
 
-You need to have latest XCode (10.2) and Swift 5 installed.
+You need to have latest Xcode (10.2) and Swift 5 installed.
 
 ### Homebrew
 
@@ -32,9 +32,9 @@ swift build --configuration release
 sudo cp .build/x86_64-apple-macosx/release/wallpapper /usr/local/bin
 ```
 
-If you are using swift in version 4.1, please edit `Package.swift` file and put there your version of swift (in first line).
+If you are using Swift 4.1, please edit `Package.swift` and change the first line to use your version of Swift.
 
-Now in the console you can run `wallpapper -h` and you should got a response similar to the following one.
+Now in the console you can run `wallpapper -h` and you should get a response similar to the following one.
 
 ```bash
 wallpapper: [command_option] -i inputFile
@@ -48,7 +48,7 @@ That's all. Now you can build your own dynamic wallpappers.
 
 ### Troubleshooting
 
-If you get an error during the Swift build portion of install, try downloading the entire Xcode IDE (not just the tools) from the app store. Then run 
+If you get an error during the Swift build portion of install, try downloading the entire Xcode IDE (not just the tools) from the App Store. Then run
 
 ```bash
 sudo xcode-select -s /Applications/Xcode.app/Contents/Developer 
@@ -62,7 +62,7 @@ If you have done above commands now you can build dynamic wallpaper. It's really
 
 ### Solar
 
-For wallpaper which based on solar coordinates `json` file have to have structure like on below snippet.
+For wallpapers based on solar coordinates, your `json` file has to be structured like the snippet below.
 
 ```json
 [
@@ -92,16 +92,16 @@ Properties:
 
 - `fileName` - name of picture file name.
 - `isPrimary` - information about image which is primary image (it will be visible after creating `heic` file). Only one of the file can be primary.
-- `isForLight` - if `true` picture will be displayed when user chose "Light (static)" wallpaper
-- `isForDark` - if `true` picture will be displayed when user chose "Dark (static)" wallpaper
-- `altitude` - is the angle between the Sun and the observer's local horizon.
-- `azimuth` - that is the angle of the Sun around the horizon.
+- `isForLight` - if `true` picture will be displayed when user chooses "Light (static)" wallpaper
+- `isForDark` - if `true` picture will be displayed when user chooses "Dark (static)" wallpaper
+- `altitude` - the angle between the Sun and the observer's local horizon.
+- `azimuth` - the angle of the Sun around the horizon.
 
-To calculate proper altitude and azimuth you can use that page: [https://keisan.casio.com/exec/system/1224682277](https://keisan.casio.com/exec/system/1224682277). You have to put place where you take a photo and the date. Then system generate for you altitude and azimuth of the Sun during whole day.
+To calculate proper altitude and azimuth you can use [this page](https://keisan.casio.com/exec/system/1224682277). You have to put place where you took the photo and the date. Then the page can calculate the altitude and azimuth of the Sun during whole day.
 
 ### Time
 
-For wallpaper which based on OS time `json` file have to have structure like on below snippet.
+For wallpapers based on OS time, your `json` file has to be structured like the snippet below.
 
 ```json
 [
@@ -137,7 +137,7 @@ Properties:
 
 ### Apperance
 
-For wallpapers based on OS apperance settings (light/dark) we have to prepare much simpler JSON file, and we have to use only two images (one for light and one for dark theme). 
+For wallpapers based on OS apperance settings (light/dark) we have to prepare much simpler JSON file, and we only have to use two images (one for light and one for dark theme). 
 
 ```json
 [
@@ -162,10 +162,10 @@ Properties:
 
 ### Preparing wallpapers
 
-When you have `json` file and all pictures then you can generate `heic` file. You have to run following command:
+Once you have the `json` file and all the pictures then you can generate a `heic` file. You have to run following command:
 
 ```bash
 wallpapper -i wallpapper.json
 ```
 
-You should got a new file: `output.heic`. Set this file as a new wallpaper and enjoy you own dynamic wallpaper! 
+You should get a new file: `output.heic`. Set this file as a new wallpaper and enjoy your own dynamic wallpaper! 
