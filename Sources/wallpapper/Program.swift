@@ -26,7 +26,7 @@ class Program {
             self.consoleIO.writeMessage("Reading JSON file: '\(fileURL.absoluteString)'...", to: .debug)
             let inputFileContents = try Data(contentsOf: fileURL)
             self.consoleIO.writeMessage("OK.\n", to: .debug)
-            
+
             let decoder = JSONDecoder()
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
@@ -86,10 +86,10 @@ class Program {
 
                 optionIndex = outputNameOptionIndex
             default:
-                break;
+                break
             }
 
-            optionIndex = optionIndex + 1
+            optionIndex += 1
         }
 
         if self.inputFileName == "" {
